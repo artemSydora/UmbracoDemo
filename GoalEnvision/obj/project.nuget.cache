@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1DsW2lC+TFyfoNQNFXDkqQaB0h3empVY+wcVu+vNZWdWA1l5nHmcSP6OppC7Aqv0DaM5B1JUYungX88q2zeaog==",
+  "dgSpecHash": "NhZbTm9y36Q7ACOsuCHimYNbj++/372/xTva9zlLLJA6UP5h0a2z2h3heMAJArh9+9hRYMfNX5mt2DDUyhYwHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\a.sydora\\source\\repos\\GoalEnvision\\GoalEnvision\\GoalEnvision.csproj",
+  "projectFilePath": "C:\\Users\\a.sydora\\source\\repos\\UmbracoDemo\\GoalEnvision\\GoalEnvision.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a.sydora\\.nuget\\packages\\bootstrap\\5.1.0\\bootstrap.5.1.0.nupkg.sha512",
     "C:\\Users\\a.sydora\\.nuget\\packages\\csharptest.net.collections-netstd2\\14.906.1403.1084\\csharptest.net.collections-netstd2.14.906.1403.1084.nupkg.sha512",

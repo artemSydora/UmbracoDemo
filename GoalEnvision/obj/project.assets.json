@@ -12366,11 +12366,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a.sydora\\source\\repos\\GoalEnvision\\GoalEnvision\\GoalEnvision.csproj",
+      "projectUniqueName": "C:\\Users\\a.sydora\\source\\repos\\UmbracoDemo\\GoalEnvision\\GoalEnvision.csproj",
       "projectName": "GoalEnvision",
-      "projectPath": "C:\\Users\\a.sydora\\source\\repos\\GoalEnvision\\GoalEnvision\\GoalEnvision.csproj",
+      "projectPath": "C:\\Users\\a.sydora\\source\\repos\\UmbracoDemo\\GoalEnvision\\GoalEnvision.csproj",
       "packagesPath": "C:\\Users\\a.sydora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a.sydora\\source\\repos\\GoalEnvision\\GoalEnvision\\obj\\",
+      "outputPath": "C:\\Users\\a.sydora\\source\\repos\\UmbracoDemo\\GoalEnvision\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\a.sydora\\AppData\\Roaming\\NuGet\\NuGet.Config",
