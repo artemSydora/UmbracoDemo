@@ -413,3 +413,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+GoalEnvision.Web/umbraco/Data/TEMP

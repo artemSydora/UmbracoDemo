@@ -34,12 +34,15 @@
 </head>
 
 <body>
-    @{ 
+    @{
         var culture = Model.GetCultureFromDomains();
-    } 
+    }
+
+
     @await Html.PartialAsync("~/Views/Partials/_Header.cshtml", Model.Root().Descendant<Settings>(culture))
     @RenderBody()
-    @await Html.PartialAsync("~/Views/Partials/_Footer.cshtml", Model.Root().Descendant<Settings>(culture))
+    @(await Component.InvokeAsync("Footer"))
+ 
     <!-- Vendor JS Files -->
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
