@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\a.sydora\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\a.sydora\\.nuget\\packages"
+    ]
+  }
+}
