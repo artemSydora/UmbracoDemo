@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Settings</summary>
 	[PublishedModel("settings")]
-	public partial class Settings : PublishedContentModel, IFooterControls, IHeaderControls
+	public partial class Settings : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -50,59 +50,59 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Copyright: Enter copyright information
+		/// Copyright: Enter copiright information
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("copyright")]
-		public virtual string Copyright => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetCopyright(this, _publishedValueFallback);
+		public virtual string Copyright => this.Value<string>(_publishedValueFallback, "copyright");
 
 		///<summary>
-		/// Logo: Choose logo
+		/// Description: Enter the description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("footerLogo")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops FooterLogo => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetFooterLogo(this, _publishedValueFallback);
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("description")]
+		public virtual string Description => this.Value<string>(_publishedValueFallback, "description");
 
 		///<summary>
 		/// Footer Navigation Menus
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("footerNavigationMenus")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MenuItem> FooterNavigationMenus => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetFooterNavigationMenus(this, _publishedValueFallback);
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MenuItem> FooterNavigationMenus => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MenuItem>>(_publishedValueFallback, "footerNavigationMenus");
 
 		///<summary>
-		/// Footer Socials Menu
+		/// Header Navigation Menu: Enter navigation menu links
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("footerSocialsMenu")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.IconLinkItem> FooterSocialsMenu => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetFooterSocialsMenu(this, _publishedValueFallback);
-
-		///<summary>
-		/// General Info
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("generalInfo")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GeneralInfo => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetGeneralInfo(this, _publishedValueFallback);
-
-		///<summary>
-		/// Tagline List
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("taglineList")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> TaglineList => global::Umbraco.Cms.Web.Common.PublishedModels.FooterControls.GetTaglineList(this, _publishedValueFallback);
-
-		///<summary>
-		/// Logo
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("headerLogo")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeaderLogo => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderControls.GetHeaderLogo(this, _publishedValueFallback);
-
-		///<summary>
-		/// Header Navigation Menu
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("headerNavigationMenu")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> HeaderNavigationMenu => global::Umbraco.Cms.Web.Common.PublishedModels.HeaderControls.GetHeaderNavigationMenu(this, _publishedValueFallback);
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> HeaderNavigationMenu => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "headerNavigationMenu");
+
+		///<summary>
+		/// Logo: Choose site logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("logo")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Logo => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "logo");
+
+		///<summary>
+		/// Socials Menu
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("socialsMenu")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.IconLinkItem> SocialsMenu => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.IconLinkItem>>(_publishedValueFallback, "socialsMenu");
+
+		///<summary>
+		/// taglineList: Enter Taglines
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("taglineList")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> TaglineList => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "taglineList");
 	}
 }

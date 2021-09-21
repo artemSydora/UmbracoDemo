@@ -21,6 +21,12 @@
         <Content Remove="umbraco/mediacache/**" />
     </ItemGroup>
 
+
+
+    <ItemGroup>
+      <Folder Include="Features\Services\" />
+    </ItemGroup>
+
     <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
     <PropertyGroup>
         <RazorCompileOnBuild>false</RazorCompileOnBuild>

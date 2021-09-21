@@ -34,12 +34,7 @@
 </head>
 
 <body>
-    @{
-        var culture = Model.GetCultureFromDomains();
-    }
-
-
-    @await Html.PartialAsync("~/Views/Partials/_Header.cshtml", Model.Root().Descendant<Settings>(culture))
+    @await Component.InvokeAsync("Header")
     @RenderBody()
     @(await Component.InvokeAsync("Footer"))
  

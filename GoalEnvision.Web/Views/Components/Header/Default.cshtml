@@ -1,5 +1,5 @@
 ﻿
-@model Settings
+@model GoalEnvision.Web.Features.Shared.Components.Header.HeaderViewModel 
 
 <header id="header" class="fixed-top header-bg">
     <button type="button"
@@ -9,7 +9,7 @@
         <i class="icofont-navigation-menu"></i>
     </button>
     <div class="container d-flex align-items-center">
-        <a href="#" class="logo mr-auto"><img src="@Model.HeaderLogo.MediaUrl()" alt="Goal" class="img-fluid"></a>
+        <a href="#" class="logo mr-auto"><img src="@Model.Logo.MediaUrl()" alt="Goal" class="img-fluid"></a>
 
         <nav id="navbarContent" class="nav-menu d-none d-lg-block">
             @if (Model.HeaderNavigationMenu != null)
@@ -21,24 +21,26 @@
                             <a class="nav-link" href="@link.Url">@link.Name</a>
                         </li>
                     }
+
                 </ul>
             }
         </nav>
         <!-- .nav-menu -->
         <div class="dropdown p-2 border border-white text-white">
             <div class="dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false">
+                 type="button"
+                 id="dropdownMenuButton"
+                 data-toggle="dropdown"
+                 aria-haspopup="true"
+                 aria-expanded="false">
                 <i class="icofont-globe "></i>
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @foreach (var (culture, infos) in Model.Cultures)
+                
+                @foreach (var (culture, infos) in Model.CurrentPage.Cultures)
                 {
-                    <a class="dropdown-item" href="@Model.Ancestor().Url(culture)">
-                        @infos.Culture.
+                    <a class="dropdown-item" href="@Model.CurrentPage.Url(culture)">
+                        @culture
                     </a>
                 }
             </div>

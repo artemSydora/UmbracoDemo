@@ -1,17 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GoalEnvision.Web.Features.Shared.SiteSettings;
+using Microsoft.AspNetCore.Mvc;
 
-namespace UmbracoNineDemoSite.Core.Features.Shared.Components.Header
+namespace GoalEnvision.Web.Features.Shared.Components.Header
 {
-    [ViewComponent(Name = "Header")]
     public class HeaderViewComponent : ViewComponent
     {
+        private readonly SettingsService _settingsService;
 
-
-        public IViewComponentResult Invoke(int selected)
+        public HeaderViewComponent(SettingsService settingsService)
         {
+            _settingsService = settingsService;
+        }
+
+
+        public IViewComponentResult Invoke()
+        {
+            var settings = _settingsService.GetSettings();
             return View(new HeaderViewModel()
             {
-               
+                HeaderNavigationMenu = settings.HeaderNavigationMenu,
+                Logo = settings.Logo,
+                CurrentPage = settings.Parent
             });
         }
     }

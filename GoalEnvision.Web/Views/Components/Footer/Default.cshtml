@@ -16,17 +16,17 @@
     </div>
     <div class="footer-top">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
 
                 <div class="col-lg-3 col-md-12 footer-contact">
-                    @if (Model.FooterLogo != null)
+                    @if (Model.Logo != null)
                     {
                         <div class=" mb-5">
-                            <img src="@Model.FooterLogo.MediaUrl()" alt="footer logo">
+                            <img src="@Model.Logo.MediaUrl()" alt="footer logo">
                         </div>
                     }
                     <p class="ml7">
-                        @Html.Raw(Model.GeneralInfo)
+                        @Model.Description
                     </p>
                 </div>
 
@@ -39,7 +39,7 @@
                             <h4>@menu.MenuTitle</h4>
 
                             <ul>
-                                @foreach (var menuItem in menu.MenuItems)
+                                @foreach (var menuItem in menu.MenuLinks)
                                 {
                                     <li>
                                         <i class="bx bx-chevron-right"></i>
@@ -54,13 +54,12 @@
                     <h4>Our Social Networks</h4>
                     <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
                     <div class="social-links mt-3">
-                        @foreach (var menuItem in Model.FooterSocialsMenu)
+                        @foreach (var menuItem in Model.SocialsMenu)
                         {
                             <a href="@menuItem.Link.Url"><i class="@menuItem.IconClass"></i></a>
                         }
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

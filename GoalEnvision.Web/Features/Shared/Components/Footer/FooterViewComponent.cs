@@ -1,39 +1,28 @@
-﻿using System.Linq;
+﻿using GoalEnvision.Web.Features.Shared.SiteSettings;
 using Microsoft.AspNetCore.Mvc;
-using Umbraco.Cms.Web.Common;
-using Umbraco.Cms.Web.Common.PublishedModels;
-using Umbraco.Extensions;
 
 namespace GoalEnvision.Web.Features.Shared.Components.Footer
 {
     public class FooterViewComponent : ViewComponent
     {
-        private readonly UmbracoHelper _umbracoHelper;
+        private readonly SettingsService _settingsService;
 
-        public FooterViewComponent(UmbracoHelper umbracoHelper)
+        public FooterViewComponent(SettingsService settingsService)
         {
-            _umbracoHelper = umbracoHelper;
-        }
-        public Settings GetSettings()
-        {
-            var settings = _umbracoHelper.ContentAtRoot()
-                .FirstOrDefault()
-                .FirstChild<Settings>();
-
-            return settings;
+            _settingsService = settingsService;
         }
 
         public IViewComponentResult Invoke()
         {
-            var settings = GetSettings();
+            var settings = _settingsService.GetSettings();
 
             return View(new FooterViewModel()
             {
                 Copyright = settings.Copyright,
-                FooterLogo = settings.FooterLogo,
+                Logo = settings.Logo,
                 FooterNavigationMenus = settings.FooterNavigationMenus,
-                FooterSocialsMenu = settings.FooterSocialsMenu,
-                GeneralInfo = settings.GeneralInfo,
+                SocialsMenu = settings.SocialsMenu,
+                Description = settings.Description,
                 TaglineList = settings.TaglineList
             });
         }

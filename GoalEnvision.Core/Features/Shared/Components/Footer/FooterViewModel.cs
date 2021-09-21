@@ -11,7 +11,7 @@ namespace GoalEnvision.Web.Features.Shared.Components.Footer
 
         public string Description { get; set; }
 
-        public MediaWithCrops Logo { get; set; }
+        public MediaWithCrops FooterLogo { get; set; }
 
         public IEnumerable<MenuItem> FooterNavigationMenus { get; set; }
 
