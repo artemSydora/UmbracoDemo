@@ -1,0 +1,25 @@
+@inherits UmbracoViewPage<BlockListItem<GoalsBlock>>
+
+@{
+    var content = Model.Content;
+}
+
+@if (content != null)
+{
+    <section id="skills" class="skills">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                    <h6>@content.Subtitle</h6>
+                    <h3>@content.Title</h3>
+                    <p class="font-italic">@content.Description</p>
+                    @*<a class="btn btn-primary">@content.Link.Name</a>*@
+                </div>
+                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                    <img src="@content.Image.Url()" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+}

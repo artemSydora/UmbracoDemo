@@ -1,0 +1,22 @@
+@inherits UmbracoViewPage<BlockListItem<StepsBlock>>
+
+@{
+    var content = Model.Content;
+    var blocks = Model.Content.StepsList;
+}
+
+
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>@content.Title</h2>
+            <p>@content.Description</p>
+        </div>
+        <div class="row">
+            @foreach (var block in blocks)
+            {
+                @await Html.PartialAsync("blocklist/Components/" + block.Content.ContentType.Alias, block)
+            }
+        </div>
+    </div>
+</section><!-- End Services Section -->

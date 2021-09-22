@@ -1,0 +1,11 @@
+@inherits UmbracoViewPage<BlockListItem<TextBlock>>
+
+@{
+    var content = Model.Content;
+}
+
+<div class="col-7 ml-5">
+    <h4>@content.Title</h4>
+    <p>@content.Description</p>
+    <a href=""></a>
+</div>

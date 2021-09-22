@@ -1,0 +1,37 @@
+@inherits UmbracoViewPage<BlockListItem<ContactsBlock>>
+
+@{
+    var content = Model.Content;
+    var blocks = Model.Content.SharedBlockList;
+}
+
+
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            @foreach (var block in blocks)
+            {
+                <div class="col-xl-4 col-md-6 d-flex " data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                        <div class="row">
+                            @if (block.Content is TextBlock)
+                            {
+                                <div class="col-7 ml-5">
+                                    @await Html.PartialAsync("blocklist/Components/Shared/" + block.Content.ContentType.Alias, block)
+                                </div>
+                            }
+                            @if (block.Content is ImageBlock)
+                            {
+                                <div class="col-3 m-0 p-0">
+                                    @await Html.PartialAsync("blocklist/Components/Shared/" + block.Content.ContentType.Alias, block)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+        </div>
+    </div>
+</section><!-- End Services Section -->

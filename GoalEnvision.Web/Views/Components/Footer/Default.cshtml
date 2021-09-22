@@ -1,12 +1,11 @@
-﻿@model GoalEnvision.Web.Features.Shared.Components.Footer.FooterViewModel
-
+﻿@model GoalEnvision.Web.Features.Components.Footer.FooterViewModel
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="footer-newsletter ">
         <div class="container">
             <div class="row text-left">
                 <div class="col">
-                    @foreach (var tagline in Model.TaglineList)
+                    @foreach (var tagline in Model.Taglines)
                     {
                         <span class="h1 mr-4 my-0">@tagline</span>
                     }
@@ -36,7 +35,7 @@
                     {
                         <div class="col-lg-3 col-md-6 footer-links">
 
-                            <h4>@menu.MenuTitle</h4>
+                            <h4>@menu.Title</h4>
 
                             <ul>
                                 @foreach (var menuItem in menu.MenuLinks)
@@ -50,16 +49,22 @@
                         </div>
                     }
                 }
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Social Networks</h4>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                    <div class="social-links mt-3">
-                        @foreach (var menuItem in Model.SocialsMenu)
-                        {
-                            <a href="@menuItem.Link.Url"><i class="@menuItem.IconClass"></i></a>
-                        }
-                    </div>
-                </div>
+                @if (Model.SocialsMenu != null)
+                {
+                    @foreach (var menu in Model.SocialsMenu)
+                    {
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>@menu.Title</h4>
+                            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                            <div class="social-links mt-3">
+                                @foreach (var menuItem in menu.SocialLinks)
+                                {
+                                    <a href="@menuItem.Link"><i class="@menuItem.IconClass"></i></a>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>

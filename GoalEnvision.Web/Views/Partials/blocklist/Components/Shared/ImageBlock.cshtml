@@ -1,0 +1,11 @@
+@inherits UmbracoViewPage<BlockListItem<ImageBlock>>
+
+@{
+    var content = Model.Content;
+}
+
+<div class="col-xl-4 col-md-6 d-flex " data-aos="zoom-in" data-aos-delay="100">
+    <div class="col-3 m-0 p-0">
+        <img src="@content.Image.Url()" />
+    </div>
+</div>
