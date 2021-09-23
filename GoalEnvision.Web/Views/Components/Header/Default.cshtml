@@ -1,0 +1,53 @@
+﻿
+@model GoalEnvision.Web.Features.Components.Header.HeaderViewModel 
+
+<header id="header" class="fixed-top header-bg">
+    <button type="button"
+            class="mobile-nav-toggle d-lg-none"
+            data-toggle="collapse"
+            data-target="navbarContent">
+        <i class="icofont-navigation-menu"></i>
+    </button>
+    <div class="container d-flex align-items-center">
+        <a href="#" class="logo mr-auto"><img src="@Model.Logo.MediaUrl()" alt="Goal" class="img-fluid"></a>
+
+        <nav id="navbarContent" class="nav-menu d-none d-lg-block">
+            @if (Model.HeaderNavigationMenu != null)
+            {
+                <ul>
+                    @foreach (var link in Model.HeaderNavigationMenu)
+                    {
+                        <li class="mx-0 px-0">
+                            <a class="nav-link" href="@link.Url">@link.Name</a>
+                        </li>
+                    }
+
+                </ul>
+            }
+        </nav>
+        <!-- .nav-menu -->
+        <div class="dropdown p-2 border border-white text-white">
+            <div class="dropdown-toggle"
+                 type="button"
+                 id="dropdownMenuButton"
+                 data-toggle="dropdown"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                <i class="icofont-globe "></i>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+                @foreach (var (culture, infos) in Model.CurrentPage.Cultures)
+                {
+                    <a class="dropdown-item" href="@Model.CurrentPage.Url(culture)">
+                        @culture
+                    </a>
+                }
+            </div>
+        </div>
+        <div>
+            <a href="#about" class="get-started-btn scrollto">Get Started</a>
+        </div>
+    </div>
+</header>
+<!-- End Header -->
