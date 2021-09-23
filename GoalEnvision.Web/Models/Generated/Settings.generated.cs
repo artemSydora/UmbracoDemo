@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Settings</summary>
 	[PublishedModel("settings")]
-	public partial class Settings : PublishedContentModel
+	public partial class Settings : PublishedContentModel, IDescriptionItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,14 +56,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("copyright")]
 		public virtual string Copyright => this.Value<string>(_publishedValueFallback, "copyright");
-
-		///<summary>
-		/// Description: Enter a description
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("description")]
-		public virtual string Description => this.Value<string>(_publishedValueFallback, "description");
 
 		///<summary>
 		/// Footer Navigation Menus: Add navigation menu
@@ -104,5 +96,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("taglines")]
 		public virtual global::System.Collections.Generic.IEnumerable<string> Taglines => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "taglines");
+
+		///<summary>
+		/// Description: Enter a description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("description")]
+		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.DescriptionItem.GetDescription(this, _publishedValueFallback);
 	}
 }

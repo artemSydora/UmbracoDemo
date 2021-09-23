@@ -18,9 +18,34 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
+	// Mixin Content Type with alias "heroControls"
+	/// <summary>Hero Controls</summary>
+	public partial interface IHeroControls : IPublishedContent
+	{
+		/// <summary>Hero Main Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Strings.IHtmlEncodedString HeroMainContent { get; }
+
+		/// <summary>Hero Main Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		global::Umbraco.Cms.Core.Models.MediaWithCrops HeroMainImage { get; }
+
+		/// <summary>HeroSubtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string HeroSubtitle { get; }
+
+		/// <summary>Hero Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string HeroTitle { get; }
+	}
+
 	/// <summary>Hero Controls</summary>
 	[PublishedModel("heroControls")]
-	public partial class HeroControls : PublishedContentModel
+	public partial class HeroControls : PublishedContentModel, IHeroControls
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,7 +80,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroMainContent")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString HeroMainContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "heroMainContent");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString HeroMainContent => GetHeroMainContent(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Hero Main Content</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GetHeroMainContent(IHeroControls that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(publishedValueFallback, "heroMainContent");
 
 		///<summary>
 		/// Hero Main Image
@@ -63,7 +93,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroMainImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeroMainImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "heroMainImage");
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeroMainImage => GetHeroMainImage(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Hero Main Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetHeroMainImage(IHeroControls that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "heroMainImage");
 
 		///<summary>
 		/// HeroSubtitle
@@ -71,7 +106,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroSubtitle")]
-		public virtual string HeroSubtitle => this.Value<string>(_publishedValueFallback, "heroSubtitle");
+		public virtual string HeroSubtitle => GetHeroSubtitle(this, _publishedValueFallback);
+
+		/// <summary>Static getter for HeroSubtitle</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetHeroSubtitle(IHeroControls that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "heroSubtitle");
 
 		///<summary>
 		/// Hero Title
@@ -79,6 +119,11 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroTitle")]
-		public virtual string HeroTitle => this.Value<string>(_publishedValueFallback, "heroTitle");
+		public virtual string HeroTitle => GetHeroTitle(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Hero Title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetHeroTitle(IHeroControls that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "heroTitle");
 	}
 }

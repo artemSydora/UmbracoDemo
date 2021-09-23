@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Navigation Menu</summary>
 	[PublishedModel("navigationMenu")]
-	public partial class NavigationMenu : PublishedElementModel, ITitlePrimitive
+	public partial class NavigationMenu : PublishedElementModel, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -62,6 +62,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[ImplementPropertyType("title")]
-		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitlePrimitive.GetTitle(this, _publishedValueFallback);
+		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitleItem.GetTitle(this, _publishedValueFallback);
 	}
 }

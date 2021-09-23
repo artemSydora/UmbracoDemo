@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<BlockListItem<CompaniesBlock>>
+@inherits UmbracoViewPage<BlockListItem<ImagesBlock>>
 
 @{
     var content = Model.Content;
@@ -7,7 +7,7 @@
 @if (content != null)
 {
     <section id="cliens" class="cliens section-bg">
-        <div class="container">
+        <div class="container py-3">
             <div class="row">
                 <div class="col">
                     <p class="h3 text-center">@content.Title</p>
@@ -16,7 +16,7 @@
 
             <div class="row mt-3" data-aos="zoom-in">
 
-                @foreach (var logo in content.CompaniesLogos)
+                @foreach (var logo in content.Images)
                 {
                     <div class="col-lg d-flex align-items-center justify-content-center">
                         <img src="@logo.MediaUrl()" class="img-fluid" alt="">

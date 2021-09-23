@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Socials Menu</summary>
 	[PublishedModel("socialsMenu")]
-	public partial class SocialsMenu : PublishedElementModel, ITitlePrimitive
+	public partial class SocialsMenu : PublishedElementModel, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,13 +55,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("socialLinks")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.IconLinkPrimitive> SocialLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.IconLinkPrimitive>>(_publishedValueFallback, "socialLinks");
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.SocialLinkItem> SocialLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.SocialLinkItem>>(_publishedValueFallback, "socialLinks");
 
 		///<summary>
 		/// Title: Enter a title of content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[ImplementPropertyType("title")]
-		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitlePrimitive.GetTitle(this, _publishedValueFallback);
+		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitleItem.GetTitle(this, _publishedValueFallback);
 	}
 }

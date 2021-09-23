@@ -1,0 +1,33 @@
+@inherits UmbracoViewPage<BlockListItem<ImageLeftBlock>>
+
+@{
+    var content = Model.Content;
+}
+
+@if (content != null)
+{
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-5 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100">
+                <img src="@content.Image.Url()" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-7 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
+                <h6>@content.Subtitle</h6>
+                <h3>@content.Title</h3>
+                <p>@content.Description</p>
+                @if (content.Button != null)
+                {
+                    <div class="mt-2">
+                        <a class="btn btn-primary" href="@content.Button.Url">@content.Button.Name</a>
+                    </div>
+                }
+                @if (content.Link != null)
+                {
+                    <div class="mt-2">
+                        <a href="@content.Link.Url">@content.Link.Name</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
