@@ -1,18 +1,12 @@
-﻿@inherits UmbracoViewPage<Home>
+﻿@model GoalEnvision.Web.Features.Home.HomeViewModel
 @{
     Layout = "Master.cshtml";
-
-    var blocks = Model.MainContent;
 }
-<div class="m-5 p-5"></div>
-<main id="main">
-    @foreach (var block in blocks)
-    {
-        <div class="row my-4 py-4" data-aos="fade-up">
-            <div class="col" data-aos="zoom-in" data-aos-delay="100">
-                    @await Html.PartialAsync("blocklist/Components/" + block.Content.ContentType.Alias, block)
-            </div>
-        </div>
-    }
-</main>
+@if (Model != null)
+{
+    <main id="main">
+        @(await Component.InvokeAsync("Hero", Model.Hero))
+        @(await Html.PartialAsync("_BlockList", Model.Blocks))
+    </main>
+}
 <!-- End Cliens Section -->

@@ -16,7 +16,8 @@ namespace GoalEnvision.Web.Features.Services
 
         public Settings GetSettings()
         {
-            var settings = _umbracoHelper.ContentAtRoot()
+            var settings = _umbracoHelper
+                .ContentAtRoot()
                 .FirstOrDefault()
                 .FirstChild<Settings>();
 

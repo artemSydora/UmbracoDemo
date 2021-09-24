@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    @(await Component.InvokeAsync("Header"))
+    @(await Component.InvokeAsync("Header", Model.Url()))
     @RenderBody()
     @(await Component.InvokeAsync("Footer"))
  

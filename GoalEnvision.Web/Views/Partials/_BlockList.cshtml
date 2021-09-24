@@ -1,0 +1,13 @@
+@model Umbraco.Cms.Core.Models.Blocks.BlockListModel
+@if (Model?.Any() == true)
+{
+    @foreach (var block in Model)
+    {
+        if (block?.ContentUdi == null) { continue; }
+        <div class="row my-4 py-4" data-aos="fade-up">
+            <div class="col" data-aos="zoom-in" data-aos-delay="100">
+                @await Html.PartialAsync("blocklist/Components/" + block.Content.ContentType.Alias, block)
+            </div>
+        </div>
+    }
+}

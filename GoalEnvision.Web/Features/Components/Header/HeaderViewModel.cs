@@ -11,5 +11,9 @@ namespace GoalEnvision.Web.Features.Components.Header
         public MediaWithCrops Logo { get; set; }
 
         public IPublishedContent CurrentPage { get; set; }
+
+        public string CurrentPageUrl { get; set; }
+
+        public IEnumerable<string> CurrentPageUrls { get; set; }
     }
 }
