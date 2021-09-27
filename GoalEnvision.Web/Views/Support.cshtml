@@ -1,9 +1,17 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Support>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Support>
 @{
 	Layout = "Master.cshtml";
 }
 <div>
-    dasdfdtgfhygjghj
+    <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+        @if (!string.IsNullOrEmpty(Model.Title))
+        {
+            <h1>@Model.Title</h1>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.Subtitle))
+        {
+            <h2>@Model.Subtitle</h2>
+        }
+    </div>
 </div>

@@ -5,11 +5,11 @@ using Umbraco.Cms.Core.DependencyInjection;
 
 namespace GoalEnvision.Web.Features.Composers
 {
-    public class CultureComposer : IComposer
+    public class CultureSwitcherComposer : IComposer
     {
         public void Compose(IUmbracoBuilder builder)
         {
-            builder.Services.AddTransient<CultureService>();
+            builder.Services.AddTransient<CultureSwitcherService>();
         }
     }
 }

@@ -10,10 +10,14 @@ namespace GoalEnvision.Web.Features.Home
         public HomeViewModel(IPublishedContent content) : base(content) { }
        
         public BlockListModel Blocks => Content.GetProperty("Blocks").GetValue() as BlockListModel;
+
         public HeroViewModel Hero => new()
         {
-            Title = Content.GetProperty("Title").GetValue() as string,
-            Subtitle = Content.GetProperty("Subtitle").GetValue() as string
+            Title = Content.GetProperty("title").GetValue() as string,
+            Description = Content.GetProperty("description").GetValue() as string,
+            Image = Content.GetProperty("image").GetValue() as MediaWithCrops,
+            Button = Content.GetProperty("button").GetValue() as Link,
+            Link = Content.GetProperty("link").GetValue() as Link
         };
     }
 }

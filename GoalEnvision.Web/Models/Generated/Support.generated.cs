@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Support</summary>
 	[PublishedModel("support")]
-	public partial class Support : PublishedContentModel
+	public partial class Support : PublishedContentModel, ISubtitleItem, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -48,5 +48,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Subtitle: Enter a subtitle of content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("subtitle")]
+		public virtual string Subtitle => global::Umbraco.Cms.Web.Common.PublishedModels.SubtitleItem.GetSubtitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Title: Enter a title of content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("title")]
+		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitleItem.GetTitle(this, _publishedValueFallback);
 	}
 }

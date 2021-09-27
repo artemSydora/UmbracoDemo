@@ -18,29 +18,29 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "hero"
-	/// <summary>Hero</summary>
-	public partial interface IHero : IPublishedContent
+	// Mixin Content Type with alias "textList"
+	/// <summary>Text List</summary>
+	public partial interface ITextList : IPublishedElement
 	{
-		/// <summary>Subtitle</summary>
+		/// <summary>List Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string Subtitle { get; }
+		string ListTitle { get; }
 
-		/// <summary>Title</summary>
+		/// <summary>Text Strings</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string Title { get; }
+		global::System.Collections.Generic.IEnumerable<string> TextStrings { get; }
 	}
 
-	/// <summary>Hero</summary>
-	[PublishedModel("hero")]
-	public partial class Hero : PublishedContentModel, IHero
+	/// <summary>Text List</summary>
+	[PublishedModel("textList")]
+	public partial class TextList : PublishedElementModel, ITextList
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		public new const string ModelTypeAlias = "hero";
+		public new const string ModelTypeAlias = "textList";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
@@ -49,14 +49,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Hero, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<TextList, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Hero(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public TextList(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -65,29 +65,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Subtitle
+		/// List Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("subtitle")]
-		public virtual string Subtitle => GetSubtitle(this, _publishedValueFallback);
+		[ImplementPropertyType("listTitle")]
+		public virtual string ListTitle => GetListTitle(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Subtitle</summary>
+		/// <summary>Static getter for List Title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetSubtitle(IHero that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "subtitle");
+		public static string GetListTitle(ITextList that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "listTitle");
 
 		///<summary>
-		/// Title
+		/// Text Strings
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("title")]
-		public virtual string Title => GetTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("textStrings")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> TextStrings => GetTextStrings(this, _publishedValueFallback);
 
-		/// <summary>Static getter for Title</summary>
+		/// <summary>Static getter for Text Strings</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetTitle(IHero that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "title");
+		public static global::System.Collections.Generic.IEnumerable<string> GetTextStrings(ITextList that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<string>>(publishedValueFallback, "textStrings");
 	}
 }

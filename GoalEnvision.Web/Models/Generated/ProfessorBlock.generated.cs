@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel
+	/// <summary>Professor Block</summary>
+	[PublishedModel("professorBlock")]
+	public partial class ProfessorBlock : PublishedElementModel, IButtonItem, IDescriptionItem, IImageItem, ILinkItem, ISubtitleItem, ITextList, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "professorBlock";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ProfessorBlock, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Home(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public ProfessorBlock(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,51 +50,59 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Blocks: Add content block
+		/// Button: Enter link of the button
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("blocks")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Blocks => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "blocks");
-
-		///<summary>
-		/// Button: Enter a button content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("button")]
-		public virtual global::Umbraco.Cms.Core.Models.Link Button => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "button");
+		public virtual global::Umbraco.Cms.Core.Models.Link Button => global::Umbraco.Cms.Web.Common.PublishedModels.ButtonItem.GetButton(this, _publishedValueFallback);
 
 		///<summary>
 		/// Description: Enter a description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("description")]
-		public virtual string Description => this.Value<string>(_publishedValueFallback, "description");
+		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.DescriptionItem.GetDescription(this, _publishedValueFallback);
 
 		///<summary>
-		/// Image: Choose an image
+		/// Image: Pick the single image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("image")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "image");
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Image => global::Umbraco.Cms.Web.Common.PublishedModels.ImageItem.GetImage(this, _publishedValueFallback);
 
 		///<summary>
-		/// Link: Enter a link
+		/// Link: Pick a link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("link")]
-		public virtual global::Umbraco.Cms.Core.Models.Link Link => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "link");
+		public virtual global::Umbraco.Cms.Core.Models.Link Link => global::Umbraco.Cms.Web.Common.PublishedModels.LinkItem.GetLink(this, _publishedValueFallback);
 
 		///<summary>
-		/// Title: Enter a title
+		/// Subtitle: Enter a subtitle of content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subtitle")]
+		public virtual string Subtitle => global::Umbraco.Cms.Web.Common.PublishedModels.SubtitleItem.GetSubtitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// List Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("listTitle")]
+		public virtual string ListTitle => global::Umbraco.Cms.Web.Common.PublishedModels.TextList.GetListTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Text Strings
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("textStrings")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> TextStrings => global::Umbraco.Cms.Web.Common.PublishedModels.TextList.GetTextStrings(this, _publishedValueFallback);
+
+		///<summary>
+		/// Title: Enter a title of content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[ImplementPropertyType("title")]
-		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.TitleItem.GetTitle(this, _publishedValueFallback);
 	}
 }
