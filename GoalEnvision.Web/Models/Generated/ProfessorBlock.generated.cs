@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Professor Block</summary>
 	[PublishedModel("professorBlock")]
-	public partial class ProfessorBlock : PublishedElementModel, IButtonItem, IDescriptionItem, IImageItem, ILinkItem, ISubtitleItem, ITextList, ITitleItem
+	public partial class ProfessorBlock : PublishedElementModel, IButtonItem, IDescriptionItem, IDesign, IImageItem, ILinkItem, ISubtitleItem, ITextList, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -64,6 +64,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.DescriptionItem.GetDescription(this, _publishedValueFallback);
 
 		///<summary>
+		/// Background Color: Choose a bootstrap background color class
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("backgroundColor")]
+		public virtual string BackgroundColor => global::Umbraco.Cms.Web.Common.PublishedModels.Design.GetBackgroundColor(this, _publishedValueFallback);
+
+		///<summary>
 		/// Image: Pick the single image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
@@ -85,18 +92,18 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Subtitle => global::Umbraco.Cms.Web.Common.PublishedModels.SubtitleItem.GetSubtitle(this, _publishedValueFallback);
 
 		///<summary>
+		/// List Items: Add text list items
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("listItems")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> ListItems => global::Umbraco.Cms.Web.Common.PublishedModels.TextList.GetListItems(this, _publishedValueFallback);
+
+		///<summary>
 		/// List Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[ImplementPropertyType("listTitle")]
 		public virtual string ListTitle => global::Umbraco.Cms.Web.Common.PublishedModels.TextList.GetListTitle(this, _publishedValueFallback);
-
-		///<summary>
-		/// Text Strings
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[ImplementPropertyType("textStrings")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> TextStrings => global::Umbraco.Cms.Web.Common.PublishedModels.TextList.GetTextStrings(this, _publishedValueFallback);
 
 		///<summary>
 		/// Title: Enter a title of content

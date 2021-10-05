@@ -6,15 +6,16 @@
 
 @if (content != null)
 {
-    <div class="container" data-aos="fade-up">
-        <div class="row">
-            <div class="col-lg-5 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100">
+<div class="container-fluid @Model.Content.BackgroundColor">
+    <div class="container  pt-5" data-aos="fade-up">
+        <div class="row p-0 m-0">
+            <div class="col-lg-4 d-flex align-self-end justify-content-center" data-aos="fade-left" data-aos-delay="100">
                 @if (content.Image != null)
                 {
-                    <img src="@content.Image.Url()" class="img-fluid" alt="">
+                    <img src="@content.Image.Url()" class="" alt="">
                 }
             </div>
-            <div class="col-lg-7 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
+            <div class="col-lg-4 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
                 <h6>@content.Subtitle</h6>
                 <h3>@content.Title</h3>
                 <p>@content.Description</p>
@@ -31,6 +32,19 @@
                     </div>
                 }
             </div>
+            @if (!String.IsNullOrWhiteSpace(content.ListTitle) && content.ListItems?.Count() != null)
+            {
+                <div class="col-lg-4 pt-lg-0" data-aos="fade-right" data-aos-delay="100">
+                    <h3>@content.ListTitle</h3>
+                    <ul>
+                        @foreach (var listItem in content.ListItems)
+                        {
+                            <li><i class="ri-check-double-line"></i>@listItem</li>
+                        }
+                    </ul>
+                </div>
+            }
         </div>
     </div>
+</div>
 }

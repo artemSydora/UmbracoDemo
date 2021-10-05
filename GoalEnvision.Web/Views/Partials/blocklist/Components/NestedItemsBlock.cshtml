@@ -6,37 +6,40 @@
 }
 
 
-<section id="services" class="services section-bg">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <h2>@content.Title</h2>
-            <p>@content.Description</p>
-        </div>
-        <div class="row">
-            @foreach (var block in blocks)
-            {
-                <div class="col-xl-4 col-md-6 d-flex " data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box">
-                        @await Html.PartialAsync("blocklist/Components/" + block.Content.ContentType.Alias, block)
-                    </div>
-                </div>
-            }
-        </div>
-        <div class="row">
-            <div class="col text-center">
-                @if (content.Button != null)
+@if (content != null)
+{
+    <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>@content.Title</h2>
+                <p>@content.Description</p>
+            </div>
+            <div class="row">
+                @foreach (var block in blocks)
                 {
-                    <div class="mt-4">
-                        <a class="btn btn-primary" href="@content.Button.Url">@content.Button.Name</a>
-                    </div>
-                }
-                @if (content.Link != null)
-                {
-                    <div class="mt-4">
-                        <a href="@content.Link.Url">@content.Link.Name</a>
+                    <div class="col-xl-4 col-md-6 d-flex " data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            @await Html.PartialAsync("blocklist/Components/" + block.Content.ContentType.Alias, block)
+                        </div>
                     </div>
                 }
             </div>
+            <div class="row">
+                <div class="col text-center">
+                    @if (content.Button != null)
+                    {
+                        <div class="mt-4">
+                            <a class="btn btn-primary" href="@content.Button.Url">@content.Button.Name</a>
+                        </div>
+                    }
+                    @if (content.Link != null)
+                    {
+                        <div class="mt-4">
+                            <a href="@content.Link.Url">@content.Link.Name</a>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
-    </div>
-</section><!-- End Services Section -->
+    </section><!-- End Services Section -->
+}

@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Image Left Block</summary>
 	[PublishedModel("imageLeftBlock")]
-	public partial class ImageLeftBlock : PublishedElementModel, IButtonItem, IDescriptionItem, IImageItem, ILinkItem, ISubtitleItem, ITitleItem
+	public partial class ImageLeftBlock : PublishedElementModel, IButtonItem, IDescriptionItem, IDesign, IImageItem, ILinkItem, ISubtitleItem, ITitleItem
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -62,6 +62,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[ImplementPropertyType("description")]
 		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.DescriptionItem.GetDescription(this, _publishedValueFallback);
+
+		///<summary>
+		/// Background Color: Choose a bootstrap background color class
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
+		[ImplementPropertyType("backgroundColor")]
+		public virtual string BackgroundColor => global::Umbraco.Cms.Web.Common.PublishedModels.Design.GetBackgroundColor(this, _publishedValueFallback);
 
 		///<summary>
 		/// Image: Pick the single image

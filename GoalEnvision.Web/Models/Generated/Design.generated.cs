@@ -18,29 +18,24 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	// Mixin Content Type with alias "textList"
-	/// <summary>Text List</summary>
-	public partial interface ITextList : IPublishedElement
+	// Mixin Content Type with alias "Design"
+	/// <summary>Colors</summary>
+	public partial interface IDesign : IPublishedElement
 	{
-		/// <summary>List Items</summary>
+		/// <summary>Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::System.Collections.Generic.IEnumerable<string> ListItems { get; }
-
-		/// <summary>List Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string ListTitle { get; }
+		string BackgroundColor { get; }
 	}
 
-	/// <summary>Text List</summary>
-	[PublishedModel("textList")]
-	public partial class TextList : PublishedElementModel, ITextList
+	/// <summary>Colors</summary>
+	[PublishedModel("Design")]
+	public partial class Design : PublishedElementModel, IDesign
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		public new const string ModelTypeAlias = "textList";
+		public new const string ModelTypeAlias = "Design";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
@@ -49,14 +44,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<TextList, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Design, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public TextList(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public Design(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -65,29 +60,16 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// List Items: Add text list items
+		/// Background Color: Choose a bootstrap background color class
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("listItems")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> ListItems => GetListItems(this, _publishedValueFallback);
+		[ImplementPropertyType("backgroundColor")]
+		public virtual string BackgroundColor => GetBackgroundColor(this, _publishedValueFallback);
 
-		/// <summary>Static getter for List Items</summary>
+		/// <summary>Static getter for Background Color</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::System.Collections.Generic.IEnumerable<string> GetListItems(ITextList that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<string>>(publishedValueFallback, "listItems");
-
-		///<summary>
-		/// List Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("listTitle")]
-		public virtual string ListTitle => GetListTitle(this, _publishedValueFallback);
-
-		/// <summary>Static getter for List Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.0.0-rc003+36582f2cd2c6ddc797c85dac0a9a6572126bf602")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetListTitle(ITextList that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "listTitle");
+		public static string GetBackgroundColor(IDesign that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "backgroundColor");
 	}
 }
